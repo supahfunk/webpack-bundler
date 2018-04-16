@@ -246,7 +246,7 @@
 /******/ 				};
 /******/ 			});
 /******/ 			hotUpdate = {};
-/******/ 			var chunkId = "vendors";
+/******/ 			var chunkId = "style";
 /******/ 			{
 /******/ 				// eslint-disable-line no-lone-blocks
 /******/ 				/*globals chunkId */
@@ -759,19 +759,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return hotCreateRequire("./src/vendors/vendors.js")(__webpack_require__.s = "./src/vendors/vendors.js");
+/******/ 	return hotCreateRequire("./src/scss/app.scss")(__webpack_require__.s = "./src/scss/app.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/vendors/vendors.js":
-/*!********************************!*\
-  !*** ./src/vendors/vendors.js ***!
-  \********************************/
+/***/ "./src/scss/app.scss":
+/*!***************************!*\
+  !*** ./src/scss/app.scss ***!
+  \***************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("\n\n//# sourceURL=webpack:///./src/vendors/vendors.js?");
+eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./src/scss/app.scss?");
 
 /***/ })
 

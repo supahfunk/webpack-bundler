@@ -1,0 +1,79 @@
+html,
+body {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #28292b;
+  color: #ffffff; }
+
+.page {
+  width: 100vw;
+  height: 100vh; }
+  .page.locked .scroll-content {
+    transform: none !important;
+    height: 100%;
+    overflow: hidden; }
+
+.container,
+.flex-row {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 0 80px; }
+  @media (max-width: 767.98px) {
+    .container,
+    .flex-row {
+      padding: 0 15px; } }
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .flex-row .flex {
+    flex: 1 1 33%; }
+    .flex-row .flex.flex-left {
+      text-align: left; }
+    .flex-row .flex.flex-center {
+      flex: 1 1 50%;
+      text-align: center; }
+    .flex-row .flex.flex-right {
+      text-align: right; }
+
+.content {
+  display: block;
+  height: 3200vh; }
+
+.mr-10 {
+  margin-right: 10px; }
+
+[unselectable] {
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none; }
+
+/*
+img,
+svg {
+	max-width: 100%;
+}
+*/
+/*
+@import "components/animations";
+@import "components/buttons";
+@import "components/navs";
+@import "components/captions";
+@import "components/markers";
+@import "components/preload";
+@import "components/scrollbar";
+@import "components/swiper";
+@import "components/switch";
+@import "components/typography";
+@import "sections/header";
+@import "sections/footer";
+@import "sections/overview";
+@import "sections/specs";
+@import "sections/learn";
+@import "responsive";
+*/
