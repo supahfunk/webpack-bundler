@@ -1,0 +1,36 @@
+{
+    "name": "webpack-bundler",
+    "displayName": "webpack-bundler",
+    "description": "test",
+    "private": true,
+    "version": "0.0.1",
+    "publisher": "circledev",
+    "license": "UNLICENSED",
+    "homepage": "https://github.com/actarian/webpack-bundler/blob/master/README.md",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "webpack",
+        "watch": "webpack --watch",
+        "serve": "webpack-dev-server --open"
+    },
+    "devDependencies": {
+        "css-loader": "^0.28.11",
+        "extract-text-webpack-plugin": "^4.0.0-beta.0",
+        "html-webpack-plugin": "^3.2.0",
+        "imports-loader": "^0.8.0",
+        "node-sass": "^4.8.3",
+        "sass-loader": "^7.0.1",
+        "style-loader": "^0.20.3",
+        "uglifyjs-webpack-plugin": "^1.2.4",
+        "webpack": "^4.5.0",
+        "webpack-cli": "^2.0.14",
+        "webpack-dev-server": "^3.1.3"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/actarian/webpack-bundler.git"
+    },
+    "dependencies": {
+        "jquery": "^3.3.1"
+    }
+}
