@@ -5,12 +5,15 @@ const webpack = require('webpack'); // to access built-in plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // installed via npm
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require('autoprefixer');
+const postcss = require('postcss');
 
 const sassPlugin = new ExtractTextPlugin({
     filename: 'css/[name].css'
 });
 
 const config = {
+    devtool: 'source-map',
     mode: 'development', // 'production'
     entry: {
         app: './src/app/app.js',
@@ -19,17 +22,37 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'docs'),
-        filename: '[name].js'
+        filename: '[name].js',
+        sourceMapFilename: '[name].js.map',
     },
     module: {
         rules: [{
             test: /\.scss$/,
             use: sassPlugin.extract({
                 fallback: "style-loader",
-                use: [{
-                    loader: "css-loader" // translates CSS into CommonJS
-                }, {
-                    loader: "sass-loader" // compiles Sass to CSS
+                use: [
+                    {
+                        loader: "css-loader", // translates CSS into CommonJS
+                        options: {
+                            sourceMap: true
+                        }
+                    },
+                    {
+                        loader: 'postcss-loader', // Run post css actions
+                        options: {
+                        plugins: function () { // post css plugins, can be exported to postcss.config.js
+                            return [
+                            require('precss'),
+                            require('autoprefixer')
+                            ];
+                        }
+                    }
+                },
+                {
+                    loader: 'sass-loader', // compiles Sass to CSS
+                    options: {
+                        sourceMap: true
+                    }
                 }]
             })
         }, {
@@ -60,6 +83,10 @@ const config = {
         new webpack.HotModuleReplacementPlugin(),
         new HtmlWebpackPlugin({
             template: './src/index.html'
+        }),
+        new webpack.SourceMapDevToolPlugin({
+            filename: '[name].js.map',
+            exclude: ['vendors.js']
         }),
         sassPlugin,
     ],

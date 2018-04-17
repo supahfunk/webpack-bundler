@@ -1,11 +1,11 @@
 /* jshint esversion: 6 */
 
-// import $ from 'jquery';
-
-var $ = require("jquery");
-// require('imports-loader?window.jQuery=jquery!./node_modules/path-to-slider-script.js');
+import $ from 'jquery';
+import 'bootstrap';
+import 'slick-carousel';
 
 $(document).ready(function () {
     console.log('Hello World!');
-    $('h1').css('color', 'red');
+
+    $('.slider').slick();
 });
